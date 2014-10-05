@@ -1,0 +1,20 @@
+#
+#	  Author :		Luke Brown
+#	  License:  	Permission based - ask me first before using.
+#	  Created: 		October 2014
+#	  Contact:		me@luke.sx
+#
+
+Options -MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+
+ErrorDocument 403 //joemethven.com
+ErrorDocument 404 //joemethven.com
+
+
+# don't touch /assets URIs
+RewriteRule ^project/ - [L,NC]
